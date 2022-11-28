@@ -1,8 +1,7 @@
 import 'package:destined/posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:destined/stories.dart';
-import 'package:destined/navbar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Users extends StatefulWidget {
   const Users({super.key});
@@ -37,38 +36,24 @@ class _userState extends State<user> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.h),
+        preferredSize: Size.fromHeight(55.h),
         child: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.white,
-          title: Text(
-            'Add Your Story',
-            style: TextStyle(
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w600,
-              color: Color(hexColor('#33196B')),
-            ),
-          ),
           actions: [
             Row(
               children: [
-                Image.asset(
-                  'assets/srch.jpeg',
-                  height: 40.h,
-                  width: 40.w,
-                ),
-                Image.asset(
-                  'assets/bell icon.jpeg',
-                  height: 40.h,
-                  width: 40.w,
-                ),
-                Image.asset(
-                  'assets/vector.jpeg',
-                  height: 35.h,
-                  width: 35.w,
-                ),
+                SvgPicture.asset('assets/Srch.svg'),
                 SizedBox(
-                  width: 5.w,
+                  width: 20.w,
+                ),
+                SvgPicture.asset('assets/bell icon.svg'),
+                SizedBox(
+                  width: 20.w,
+                ),
+                SvgPicture.asset('assets/Vector.svg'),
+                SizedBox(
+                  width: 20.w,
                 ),
               ],
             )
@@ -79,7 +64,6 @@ class _userState extends State<user> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            const Stories(),
             SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Posts(),
@@ -87,9 +71,67 @@ class _userState extends State<user> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBar(),
+      bottomNavigationBar: NavBar(context),
     );
   }
+}
+
+Widget NavBar(BuildContext context) {
+  return Container(
+      width: double.infinity,
+      height: 60.h,
+      decoration: const BoxDecoration(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: Row(children: [
+          SizedBox(
+            width: 10.w,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Image.asset(
+              'assets/swipe-c.jpeg',
+              fit: BoxFit.cover,
+              height: 45.h,
+              width: 45.w,
+            ),
+          ),
+          SizedBox(
+            width: 35.w,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Image.asset(
+              'assets/circle-c.jpeg',
+              fit: BoxFit.cover,
+              height: 45.h,
+              width: 45.w,
+            ),
+          ),
+          SizedBox(width: 30.w),
+          GestureDetector(
+            onTap: () {},
+            child: Image.asset(
+              'assets/chat-c.jpeg',
+              fit: BoxFit.cover,
+              height: 45.h,
+              width: 45.w,
+            ),
+          ),
+          SizedBox(
+            width: 30.w,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Image.asset(
+              'assets/user-c.jpeg',
+              fit: BoxFit.cover,
+              height: 45.h,
+              width: 45.w,
+            ),
+          ),
+        ]),
+      ));
 }
 
 int hexColor(String c) {

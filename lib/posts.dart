@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Posts extends StatefulWidget {
   @override
@@ -100,7 +101,21 @@ class _PostsState extends State<Posts> with SingleTickerProviderStateMixin {
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 130.h,
+                                height: 10.h,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 110.h,
+                                  ),
+                                  SvgPicture.asset(
+                                    'assets/online icon.svg',
+                                    color: Colors.green,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 105.h,
                               ),
                               Row(
                                 children: [
@@ -236,7 +251,21 @@ class _PostsState extends State<Posts> with SingleTickerProviderStateMixin {
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 130.h,
+                                height: 10.h,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 110.h,
+                                  ),
+                                  SvgPicture.asset(
+                                    'assets/online icon.svg',
+                                    color: Colors.green,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 105.h,
                               ),
                               Row(
                                 children: [

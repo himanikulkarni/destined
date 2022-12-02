@@ -1,3 +1,4 @@
+import 'package:destined/home_swipe.dart';
 import 'package:destined/posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -100,7 +101,12 @@ Widget NavBar(BuildContext context) {
             width: 35.w,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const swipe_card()),
+              );
+            },
             child: Image.asset(
               'assets/circle-c.jpeg',
               fit: BoxFit.cover,

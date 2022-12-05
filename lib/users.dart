@@ -3,6 +3,8 @@ import 'package:destined/posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:destined/user_details.dart';
+import 'package:destined/messages.dart';
 
 class Users extends StatefulWidget {
   const Users({super.key});
@@ -116,7 +118,12 @@ Widget NavBar(BuildContext context) {
           ),
           SizedBox(width: 30.w),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MessageScreen()),
+              );
+            },
             child: Image.asset(
               'assets/chat-c.jpeg',
               fit: BoxFit.cover,
@@ -128,7 +135,13 @@ Widget NavBar(BuildContext context) {
             width: 30.w,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const UserDetailsScreen()),
+              );
+            },
             child: Image.asset(
               'assets/user-c.jpeg',
               fit: BoxFit.cover,
